@@ -1,0 +1,4 @@
+./vendor/bin/phalcon create-project src  - создать пустой проект
+ composer require --dev phalcon/ide-stubs - чтобы phpstorm находил все пакеты phalcon
+./vendor/bin/php-cs-fixer fix src - применить php-cs-fixer к проекту
+

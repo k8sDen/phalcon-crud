@@ -1,0 +1,64 @@
+# IDE / Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Composer dependencies
+/vendor/
+
+# Environment files
+.env
+.env.*.local
+
+# OS / System
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+storage/logs/
+
+# Cache
+cache/
+runtime/
+phalcon/cache/
+phalcon/storage/
+
+# PHPStorm specific
+*.iml
+*.iws
+
+# PHPUnit
+.phpunit.result.cache
+tests/_output/
+tests/_support/_generated/
+
+# Coverage reports
+coverage/
+clover.xml
+phpunit.xml
+
+# Build / temp
+build/
+tmp/
+temp/
+*.tmp
+*.swp
+*.bak
+
+# Docker-related
+docker-compose.override.yml
+docker-compose.local.yml
+.docker/
+
+# Phalcon DevTools generated folder (if exists)
+.migrations/
+
+# Node/npm (если есть frontend часть)
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+public/build/
