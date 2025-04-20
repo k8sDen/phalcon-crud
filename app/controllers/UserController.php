@@ -9,12 +9,18 @@ use App\Validations\UserUpdateValidation;
 use Exception;
 use Phalcon\Http\ResponseInterface;
 
+/**
+ * Контроллер для работы с пользователями
+ */
 class UserController extends BaseController
 {
     /**
      * Сервис для работы с пользователями
      */
     protected UserService $userService;
+    /**
+     * Request объект
+     */
     protected \Phalcon\Http\RequestInterface $request;
 
     public function onConstruct(): void
@@ -62,7 +68,7 @@ class UserController extends BaseController
         } catch (\Throwable $e) {
             return $this->response
                 ->setStatusCode(500, 'Server Error')
-                ->setJsonContent(['error' => 'Something went wrong.']);
+                ->setJsonContent(['error' => 'Что-то пошло не так']);
         }
     }
 
@@ -118,7 +124,7 @@ class UserController extends BaseController
         } catch (\Throwable $e) {
             return $this->response
                 ->setStatusCode(500, 'Server Error')
-                ->setJsonContent(['error' => 'Something went wrong.']);
+                ->setJsonContent(['error' => 'Что-то пошло не так']);
         }
     }
 
@@ -161,7 +167,7 @@ class UserController extends BaseController
         } catch (\Throwable $e) {
             return $this->response
                 ->setStatusCode(500, 'Server Error')
-                ->setJsonContent(['error' => 'Something went wrong.']);
+                ->setJsonContent(['error' => 'Что-то пошло не так']);
         }
     }
 }

@@ -1,11 +1,14 @@
 <?php
-
-namespace App\validations;
+declare(strict_types=1);
+namespace App\Validations;
 
 use Phalcon\Filter\Validation;
 use Phalcon\Filter\Validation\Validator\Email;
 use Phalcon\Filter\Validation\Validator\PresenceOf;
 
+/**
+ * Валидатор для создания пользователя
+ */
 class UserCreateValidation extends Validation
 {
     public function initialize(): void

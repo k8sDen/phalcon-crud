@@ -14,7 +14,7 @@
       "App\\Services\\": "app/services",
       "App\\Tasks\\": "app/tasks",
       "App\\Exceptions\\": "app/exceptions",
-      "App\\validations\\": "app/validations"
+      "App\\Validations\\": "app/validations"
     }
   },
   "authors": [

@@ -46,6 +46,7 @@ readonly class UserService
     }
 
     /**
+     * Удаляет пользователя по ID
      * @throws Exception
      */
     public function deleteUser(int $id): void
@@ -54,6 +55,7 @@ readonly class UserService
     }
 
     /**
+     * Обновляет пользователя по ID
      * @throws Exception
      */
     public function updateUser(int $id, array $data): array

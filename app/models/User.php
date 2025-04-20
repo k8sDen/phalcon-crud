@@ -69,6 +69,7 @@ class User extends Model
     }
 
     /**
+     * Возвращает дату регистрации
      * @throws \DateMalformedStringException
      */
     public function getTimestamp(): ?\DateTimeInterface

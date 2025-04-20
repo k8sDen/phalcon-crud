@@ -10,6 +10,9 @@ use App\Models\User;
  */
 class UserRepository extends BaseRepository
 {
+    /**
+     * Модель пользователей, с которой будет работать репозиторий
+     */
     protected function model(): string
     {
         return User::class;

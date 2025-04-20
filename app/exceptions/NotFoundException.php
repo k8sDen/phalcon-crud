@@ -4,6 +4,9 @@ namespace App\Exceptions;
 
 use Phalcon\Http\Response\Exception as HttpException;
 
+/**
+ * Исключение 404 Not Found
+ */
 class NotFoundException extends HttpException
 {
     /**
