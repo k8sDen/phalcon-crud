@@ -92,6 +92,7 @@ class UserServiceTest extends \Codeception\Test\Unit
             ->with($userId);
 
         $this->userService->deleteUser($userId);
+        
         $this->assertTrue(true);
     }
 
@@ -112,7 +113,7 @@ class UserServiceTest extends \Codeception\Test\Unit
             ->willReturn($userMock);
 
         $result = $this->userService->updateUser($userId, $data);
-        
+
         $this->assertSame($data, $result);
     }
 }
