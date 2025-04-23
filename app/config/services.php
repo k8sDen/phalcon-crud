@@ -3,18 +3,16 @@ declare(strict_types=1);
 
 use App\Repositories\UserRepository;
 use App\Services\UserService;
-use Phalcon\Html\Escaper;
 use Phalcon\Flash\Direct as Flash;
+use Phalcon\Html\Escaper;
+use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
+use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Session\Adapter\Stream as SessionAdapter;
 use Phalcon\Session\Manager as SessionManager;
-use Phalcon\Mvc\Url as UrlResolver;
-use Phalcon\Mvc\Dispatcher;
-
-global $di;
 
 /**
  * Shared configuration service
@@ -46,13 +44,13 @@ $di->setShared('view', function () {
     $view->setViewsDir($config->application->viewsDir);
 
     $view->registerEngines([
-        '.volt' => function ($view) {
+        '.volt'  => function ($view) {
             $config = $this->getConfig();
 
             $volt = new VoltEngine($view, $this);
 
             $volt->setOptions([
-                'path' => $config->application->cacheDir,
+                'path'      => $config->application->cacheDir,
                 'separator' => '_'
             ]);
 
@@ -71,13 +69,13 @@ $di->setShared('view', function () {
 $di->setShared('db', function () {
     $config = $this->getConfig();
 
-    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
+    $class  = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
     $params = [
-        'host' => $config->database->host,
+        'host'     => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
-        'dbname' => $config->database->dbname,
-        'charset' => $config->database->charset
+        'dbname'   => $config->database->dbname,
+        'charset'  => $config->database->charset
     ];
 
     if ($config->database->adapter == 'Postgresql') {
@@ -100,12 +98,12 @@ $di->setShared('modelsMetadata', function () {
  */
 $di->set('flash', function () {
     $escaper = new Escaper();
-    $flash = new Flash($escaper);
+    $flash   = new Flash($escaper);
     $flash->setImplicitFlush(false);
     $flash->setCssClasses([
-        'error' => 'alert alert-danger',
+        'error'   => 'alert alert-danger',
         'success' => 'alert alert-success',
-        'notice' => 'alert alert-info',
+        'notice'  => 'alert alert-info',
         'warning' => 'alert alert-warning'
     ]);
 
@@ -117,7 +115,7 @@ $di->set('flash', function () {
  */
 $di->setShared('session', function () {
     $session = new SessionManager();
-    $files = new SessionAdapter([
+    $files   = new SessionAdapter([
         'savePath' => sys_get_temp_dir(),
     ]);
     $session->setAdapter($files);
